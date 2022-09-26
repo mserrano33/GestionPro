@@ -29,7 +29,7 @@ namespace CapaDatos
 
         }
 
-        public void Insertar(string nombre, string desc, string marca, double precio, int stock)
+        public void Insertar(string nombre, string dni, string Telefono, string direccion, int id_estado)
         {
             //PROCEDIMNIENTO
 
@@ -37,29 +37,29 @@ namespace CapaDatos
             comando.CommandText = "InsetarCli";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@dni", dnin);
-            comando.Parameters.AddWithValue("@Telefono", Telefono);
+            comando.Parameters.AddWithValue("@dni", dni);
+            comando.Parameters.AddWithValue("@Telefono", Telefono); 
             comando.Parameters.AddWithValue("@direccion", direccion);
             comando.Parameters.AddWithValue("@Id_estado", id_estado);
 
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();
-
+           
         }
 
-        public void Editar(string nombre, string desc, string marca, double precio, int stock, int id_producto)
+        public void Editar(string nombre, string dni, string Telefono, string direccion, int Id_estado)
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarProductos";
+            comando.CommandText = "EditarClientes";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@descrip", desc);
-            comando.Parameters.AddWithValue("@Marca", marca);
-            comando.Parameters.AddWithValue("@precio", precio);
-            comando.Parameters.AddWithValue("@stock", stock);
-            comando.Parameters.AddWithValue("@id_producto", id_producto);
+            comando.Parameters.AddWithValue("@dni", dni);
+            comando.Parameters.AddWithValue("@telefono", Telefono);
+            comando.Parameters.AddWithValue("@direccion", direccion);
+            comando.Parameters.AddWithValue("@id_estado", Id_estado);
+            
 
             comando.ExecuteNonQuery();
 
@@ -69,10 +69,10 @@ namespace CapaDatos
         public void Eliminar(int id)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarProducto";
+            comando.CommandText = "EliminarCliente";
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@id_producto", id);
+            comando.Parameters.AddWithValue("@id_cliente", id);
 
             comando.ExecuteNonQuery();
 

@@ -95,10 +95,12 @@ go
 create proc MostrarFactura
 as
 select *from Factura
-gocreate proc MostrarEstado
+go
+create proc MostrarEstado
 as
 select *from Estado
-gocreate proc MostrarCaja
+go
+create proc MostrarCaja
 as
 select *from Caja
 go
