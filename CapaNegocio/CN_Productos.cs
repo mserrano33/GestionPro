@@ -19,14 +19,14 @@ namespace CapaNegocio
             tabla = objetoCD.Mostrar();
             return tabla;
         }
-        public void InsertarPRod ( string nombre,string desc,string marca,string precio, string stock){
+        public void InsertarPRod ( string nombre,string desc,string marca,string precio,string preciocosto, string stock){
 
-            objetoCD.Insertar(nombre,desc,marca,Convert.ToDouble(precio),Convert.ToInt32(stock));
+            objetoCD.Insertar(nombre,desc,marca,Convert.ToDouble(precio), Convert.ToDouble(preciocosto), Convert.ToInt32(stock));
     }
 
-        public void EditarProd(string nombre, string desc, string marca, string precio, string stock,string id_producto)
+        public void EditarProd(string nombre, string desc, string marca, string precio,string preciocosto, string stock,string id_producto)
         {
-            objetoCD.Editar(nombre, desc, marca, Convert.ToDouble(precio), Convert.ToInt32(stock),Convert.ToInt32(id_producto));
+            objetoCD.Editar(nombre, desc, marca, Convert.ToDouble(precio), Convert.ToDouble(preciocosto), Convert.ToInt32(stock),Convert.ToInt32(id_producto));
         }
 
         public void EliminarPRod(string id_producto) {

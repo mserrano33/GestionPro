@@ -40,7 +40,7 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    objetoCN.InsertarPRod(txtNombre.Text, txtDesc.Text, txtMarca.Text, txtPrecio.Text, txtStock.Text);
+                    objetoCN.InsertarPRod(txtNombre.Text, txtDesc.Text, txtMarca.Text, txtPrecio.Text, txtPreciocosto.Text, txtStock.Text);
                     MessageBox.Show("se inserto correctamente");
                     MostrarProdctos();
                     limpiarForm();
@@ -55,7 +55,7 @@ namespace CapaPresentacion
 
                 try
                 {
-                    objetoCN.EditarProd(txtNombre.Text, txtDesc.Text, txtMarca.Text, txtPrecio.Text, txtStock.Text,idProducto);
+                    objetoCN.EditarProd(txtNombre.Text, txtDesc.Text, txtMarca.Text, txtPrecio.Text,txtPreciocosto.Text, txtStock.Text,idProducto);
                     MessageBox.Show("se edito correctamente");
                     MostrarProdctos();
                     limpiarForm();
@@ -76,6 +76,7 @@ namespace CapaPresentacion
                 txtMarca.Text = dataGridView1.CurrentRow.Cells["Marca"].Value.ToString();
                 txtDesc.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = dataGridView1.CurrentRow.Cells["Precio"].Value.ToString();
+                txtPreciocosto.Text = dataGridView1.CurrentRow.Cells["Preciocosto"].Value.ToString();
                 txtStock.Text = dataGridView1.CurrentRow.Cells["Stock"].Value.ToString();
                 idProducto = dataGridView1.CurrentRow.Cells["Id"].Value.ToString();
             }
@@ -87,6 +88,7 @@ namespace CapaPresentacion
             txtDesc.Clear();
             txtMarca.Text = "";
             txtPrecio.Clear();
+            txtPreciocosto.Clear();
             txtStock.Clear();
             txtNombre.Clear();
         }
@@ -111,6 +113,16 @@ namespace CapaPresentacion
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textPreciocosto_TextChanged(object sender, EventArgs e)
         {
 
         }

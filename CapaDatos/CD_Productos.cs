@@ -28,7 +28,7 @@ namespace CapaDatos
             
         }
 
-        public void Insertar(string nombre,string desc,string marca,double precio, int stock ) {
+        public void Insertar(string nombre,string desc,string marca,double precio,double preciocosto, int stock ) {
             //PROCEDIMNIENTO
             
             comando.Connection = conexion.AbrirConexion();
@@ -38,6 +38,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@descrip",desc);
             comando.Parameters.AddWithValue("@Marca",marca);
             comando.Parameters.AddWithValue("@precio",precio);
+            comando.Parameters.AddWithValue("@preciocosto", preciocosto);
             comando.Parameters.AddWithValue("@stock",precio);
 
             comando.ExecuteNonQuery();
@@ -46,7 +47,7 @@ namespace CapaDatos
         
         }
 
-        public void Editar(string nombre, string desc, string marca, double precio, int stock,int id_producto)
+        public void Editar(string nombre, string desc, string marca, double precio,double preciocosto, int stock,int id_producto)
         {
             
             comando.Connection = conexion.AbrirConexion();
@@ -56,6 +57,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@descrip", desc);
             comando.Parameters.AddWithValue("@Marca", marca);
             comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@preciocosto", preciocosto);
             comando.Parameters.AddWithValue("@stock", stock);
             comando.Parameters.AddWithValue("@id_producto",id_producto);
 
